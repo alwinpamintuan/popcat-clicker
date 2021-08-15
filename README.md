@@ -8,7 +8,7 @@ Auto-clicker for popcat.click using Puppeteer
 To run the program, run a terminal instance and change the directory to `popcat-clicker` then enter:
 ```bash
 npm install puppeteer
-npm start
+node index.js
 ```
 
 ## Command-Line Options
@@ -17,7 +17,7 @@ Take a screenshot every n milliseconds.
 ```bash
 --update=<number of milliseconds>
 ```
-Set headless
+Set browser mode to headful
 ```bash
---headless=<true/false>
+--headful
 ```
