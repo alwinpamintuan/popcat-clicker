@@ -17,5 +17,9 @@ import puppeteer from 'puppeteer'
     const cat = await page.$('div.cat-img')
     await page.hover('div.cat-img')
 
-    while(true) await cat.click()
+    setInterval(async () => {
+        for(var i=0; i<100; i++){
+            await cat.click()
+        }
+    }, 0)
 })()
