@@ -1,14 +1,16 @@
 # Popcat Clicker
 
-Auto-clicker for popcat.click using Puppeteer
+Auto-clicker for popcat.click 🇵🇭 using Puppeteer
 
 
 ## Starting the Auto-clicker
-
-To run the program, run a terminal instance and change the directory to `popcat-clicker` then enter:
+Install dependencies
 ```bash
 npm install puppeteer
-node index.js
+```
+Run the program
+```bash
+node index.js <--options>
 ```
 
 ## Command-Line Options
