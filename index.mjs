@@ -1,19 +1,18 @@
 import puppeteer from 'puppeteer'
 
 (async () => {
-
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         defaultViewport: null,
-        userDataDir: './dataCache'
+        userDataDir: './data_cache'
     })
     
     const page = await browser.newPage()
-    await page.goto('https://popcat.click/', {waitUntil: 'networkidle2'})
-    const cat = await page.$('div.cat-img')
+    await page.goto('https://popcat.click/')
+    await page.waitForSelector('div.cat-img')
 
-    while(true){
-        await cat.click()
-        // page.waitForTimeout(75)
-    }
+    const cat = await page.$('div.cat-img')
+    await page.hover('div.cat-img')
+
+    while(true) await cat.click()
 })()
