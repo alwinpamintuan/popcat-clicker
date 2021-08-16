@@ -27,7 +27,7 @@ const args = require('minimist')(process.argv.slice(2));
     }
 
     await click(cat);
-    setInterval(await click(cat), 30000);
+    setInterval(async () => await click(cat), 30000);
 })()
 
 async function click(cat){
