@@ -26,9 +26,10 @@ const args = require('minimist')(process.argv.slice(2));
         }, parseInt(args['update']))
     }
 
-    // 800 clicks every 30 seconds
-    setInterval(async () => {
-        await cat.click()
-    }, 0.0375)
-    
+    await click(cat);
+    setInterval(await click(cat), 30000);
 })()
+
+async function click(cat){
+    for(let i=0; i<800; i++) await cat.click()
+}
