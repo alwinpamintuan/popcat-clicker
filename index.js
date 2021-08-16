@@ -20,13 +20,15 @@ const args = require('minimist')(process.argv.slice(2));
     const cat = await page.$('div.cat-img')
     await page.screenshot({path: 'verify-ready.png'})
 
-    setInterval(async () => {
-        for(var i=0; i<100; i++) await cat.click()
-    }, 0)
-
     if(args['update']){
         setInterval(async () => {
             await page.screenshot({path: `./screenshots/update.png`})
         }, parseInt(args['update']))
     }
+
+    // 800 clicks every 30 seconds
+    setInterval(async () => {
+        await cat.click()
+    }, 0.0375)
+    
 })()
